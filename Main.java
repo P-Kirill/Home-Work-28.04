@@ -12,13 +12,16 @@ public class Main {
                 colors[i][j] = random.nextInt(256);
             }
         }
+        matrixOut(colors, rotatedColors(colors));
+    }
+
+    public static void matrixOut(int[][] colors, int[][] rotate) {
         System.out.println("Вывод оригинальной матрицы");
         printColors(colors);
-        int[][] rotate = rotatedColors(colors);
+        rotatedColors(colors);
         System.out.println("Вывод перевернутой матрицы");
         printColors(rotate);
     }
-
 
     public static void printColors(int[][] colors) {
         for (int i = 0; i < SIZE; i++) {
@@ -37,7 +40,6 @@ public class Main {
                 rotate[i][j] = colors[SIZE - 1 - j][i];
             }
         }
-
         return rotate;
     }
 }
